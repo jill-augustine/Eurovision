@@ -40,8 +40,8 @@ for (i in seq_along(cleaned_voting_tables2021)) {
 tidy_voting_tables2021[[i]] <- cleaned_voting_tables2021[[i]] %>%
     select(-ends_with('score')) %>%
     tidyr::pivot_longer(cols = c(everything(), -Country), names_to = 'AwardedFrom', values_to = 'Points') %>%
-    rename(AwardedTo = Country) %>%
-    mutate(Points = ifelse(AwardedFrom == AwardedTo, NA, Points)
+    rename(AwardedBy = Country) %>%
+    mutate(Points = ifelse(AwardedFrom == AwardedBy, NA, Points)
            )
 }
 
@@ -74,8 +74,8 @@ for (i in seq_along(cleaned_voting_tables2019)) {
     tidy_voting_tables2019[[i]] <- cleaned_voting_tables2019[[i]] %>%
         select(-ends_with('score')) %>%
         tidyr::pivot_longer(cols = c(everything(), -Country), names_to = 'AwardedFrom', values_to = 'Points') %>%
-        rename(AwardedTo = Country) %>%
-        mutate(Points = ifelse(AwardedFrom == AwardedTo, NA, Points)
+        rename(AwardedBy = Country) %>%
+        mutate(Points = ifelse(AwardedFrom == AwardedBy, NA, Points)
         )
 }
 
@@ -108,8 +108,8 @@ for (i in seq_along(cleaned_voting_tables2018)) {
     tidy_voting_tables2018[[i]] <- cleaned_voting_tables2018[[i]] %>%
         select(-ends_with('score')) %>%
         tidyr::pivot_longer(cols = c(everything(), -Country), names_to = 'AwardedFrom', values_to = 'Points') %>%
-        rename(AwardedTo = Country) %>%
-        mutate(Points = ifelse(AwardedFrom == AwardedTo, NA, Points)
+        rename(AwardedBy = Country) %>%
+        mutate(Points = ifelse(AwardedFrom == AwardedBy, NA, Points)
         )
 }
 
@@ -142,8 +142,8 @@ for (i in seq_along(cleaned_voting_tables2017)) {
     tidy_voting_tables2017[[i]] <- cleaned_voting_tables2017[[i]] %>%
         select(-ends_with('score')) %>%
         tidyr::pivot_longer(cols = c(everything(), -Country), names_to = 'AwardedFrom', values_to = 'Points') %>%
-        rename(AwardedTo = Country) %>%
-        mutate(Points = ifelse(AwardedFrom == AwardedTo, NA, Points)
+        rename(AwardedBy = Country) %>%
+        mutate(Points = ifelse(AwardedFrom == AwardedBy, NA, Points)
         )
 }
 
@@ -176,8 +176,8 @@ for (i in seq_along(cleaned_voting_tables2016)) {
     tidy_voting_tables2016[[i]] <- cleaned_voting_tables2016[[i]] %>%
         select(-ends_with('score')) %>%
         tidyr::pivot_longer(cols = c(everything(), -Country), names_to = 'AwardedFrom', values_to = 'Points') %>%
-        rename(AwardedTo = Country) %>%
-        mutate(Points = ifelse(AwardedFrom == AwardedTo, NA, Points)
+        rename(AwardedBy = Country) %>%
+        mutate(Points = ifelse(AwardedFrom == AwardedBy, NA, Points)
         )
 }
 
